@@ -12,11 +12,11 @@ public class DisplayTooltip : MonoBehaviour
         string finalText = "";
         string path = "tooltips";
         TextAsset csvFile = Resources.Load<TextAsset>(path) as TextAsset;
-        bool isLoaded = Localization.LoadCSV(csvFile);
+        // bool isLoaded = Localization.LoadCSV(csvFile);
 
         // targetPos를 해당 gameobject의 local에서 계산 후 world position으로 변환
         BoxCollider2D targetBox = GetComponent<BoxCollider2D>();
-        Transform targetTrans = GetComponent<Transform>();
+        Transform targetTrans = this.transform;
         Vector3 pos = new Vector3();
         pos.x = targetBox.size.x / 2 + targetBox.offset.x;
         pos.y = -targetBox.size.y / 2 + targetBox.offset.y;
@@ -55,7 +55,7 @@ public class DisplayTooltip : MonoBehaviour
         //
         //// End debug //
 
-        if (isLoaded)
+        if (true)
         {
             //Debug.Log("CSV Loaded!");
 
